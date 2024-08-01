@@ -62,4 +62,33 @@ let comercialpropertydata = (req,res)=>{
     })
 }
 
-module.exports = {privatepropertydata,schmepropertiesdata,comercialpropertydata}
+//getproduct
+
+const getprivate  = (req,res)=>{
+    comdb.find()
+    .then((data)=>{
+         res.send({data:data})
+    })
+    .catch((err)=>{
+        console.log(err);
+        res.send({err:err})
+    })
+}
+
+//update_product
+
+let updateOnec = (req,res)=>{
+    comdb.updateOne({c_carpetarea
+        :req.query.c_carpetarea
+    },req.body)
+    .then((data)=>{
+        console.log('Data',data);
+         res.send({data:data})
+    })
+    .catch((err)=>{
+        console.log(err);
+        res.send({err:err})
+    })
+}
+
+module.exports = {privatepropertydata,schmepropertiesdata,comercialpropertydata,getprivate,updateOnec}
